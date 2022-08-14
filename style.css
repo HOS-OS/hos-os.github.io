@@ -3,7 +3,7 @@
 }
 
 .slider {
-  width:610px;
+  width:510px;
   text-align: center;
   overflow: hidden;
 }
@@ -39,8 +39,8 @@
 .slides > div {
   scroll-snap-align: start;
   flex-shrink: 0;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   margin-right: 50px;
   border-radius: 10px;
 
