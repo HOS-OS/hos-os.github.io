@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+.slider {
+  width:610px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  border-color:black;
+  overflow-x: auto;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+
+
+
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /*
+  scroll-snap-points-x: repeat(300px);
+  scroll-snap-type: mandatory;
+  */
+}
+.slides::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+.slides::-webkit-scrollbar-track {
+  background: transparent;
+}
+.slides > div {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 600px;
+  height: 600px;
+  margin-right: 50px;
+  border-radius: 10px;
+
+  border: 5px solid transparent;
+    background: linear-gradient(to right, white, white),
+      linear-gradient(60deg, #552586, #804FB3, #9969C7, #CF268A, #E65C9C, #FB8CAB);
+        -webkit-animation:animatedgradient 3s ease alternate infinite;
+                animation:animatedgradient 3s ease alternate infinite;
+
+
+
+
+  background: #eee;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+.slides > div:target {
+/*   transform: scale(0.8); */
+}
+.author-info {
+  background: rgba(0, 0, 0);
+  color: white;
+  padding: 0.75rem;
+
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+}
+.author-info a {
+  color: white;
+}
+img {
+  width: 8em;
+  height: 8em;
+  position: relative;
+  background-size: cover;
+  margin-bottom: 2em;
+  border-radius: 100%;
+  padding: 1em;
+  -webkit-box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3);
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 3em;
+}
+
+.slider > a {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+   border: 1px solid transparent;
+    background:white;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border-color: black;
+  margin: 0 0 0.5rem 0;
+  position: relative;
+}
+.slider > a:active {
+  top: 1px;
+}
+.slider > a:focus {
+  background: blue;
+}
+
+/* Don't need button navigation */
+@supports (scroll-snap-type) {
+  .slider > a {
+    display: none;
+  }
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Ropa Sans', sans-serif;
+  border-color: black;
+}
+.p {text-align: center;
+}
